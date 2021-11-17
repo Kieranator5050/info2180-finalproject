@@ -12,6 +12,8 @@
         $password = 'password123';
         $dbname = 'bugme';
 
+        $homeurl = '../htmlsnippets/allissues.html';
+
         //Try catch block to check for connection errors
         try {
             //Make connection
@@ -33,7 +35,9 @@
             if($result!=NULL){
                 //Set the session variable isLogged to true and include the homepage html
                 $_SESSION['isLogged'] = true;
-                include '../htmlsnippets/allissues.html';
+                $_SESSION['password'] = password_hash($pass, PASSWORD_DEFAULT);
+                $_SESSION['email'] = $email;
+                include $homeurl;
             } else {
                 //If the result is null include the login html
                 include '../htmlsnippets/login.html';
