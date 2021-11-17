@@ -1,9 +1,13 @@
 <?php 
   /**
    * Start a session when landing on the page.
+   * Active Session Variables
+   * $_SESSION['isLogged'] = true;
+   * $_SESSION['password'] = password_hash($pass, PASSWORD_DEFAULT);
+   * $_SESSION['email'] = $email;
    */
   session_start();
-  session_destroy();
+  //session_destroy();
 ?>
 
 <!DOCTYPE html>
