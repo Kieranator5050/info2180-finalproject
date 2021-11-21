@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
      * navbar.php will check the request and display the relative html snippet
      */
     function ajaxCall(intparam) {
-        let url =  `./phpfiles/navbar.php?requestType=${intparam}`;
+        let url =  `./scripts/navbar.php?requestType=${intparam}`;
         let mainSection = document.getElementById('mainSection');
         fetch(url)
         .then(response=>response.text())
         .then(data=>{
             if(intparam!=3){
-                mainSection.innerHTML = "";
-                mainSection.innerHTML = data;
+                $("#mainSection").empty();
+                $("#mainSection").append(data);
             } else {
                 console.log("Logout");
                 window.location.reload();

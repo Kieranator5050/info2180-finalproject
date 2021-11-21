@@ -15,8 +15,9 @@
   <head>
     <meta charset="utf-8">
     <title>BugMe Issue Tracker</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./styles.php">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/styles.php">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
 
   <body>
@@ -32,7 +33,7 @@
       <nav>
         <?php
           //Including all navbar items
-          include './htmlsnippets/navbar.html'; 
+          include './subpages/navbar.html'; 
         ?>
       </nav>
       <!-- NOTE: Main section-->
@@ -40,7 +41,7 @@
         <?php
           //If already logged in display home screen else show login display
           if (isset($_SESSION['isLogged'])) {
-            include './htmlsnippets/allIssues.html';
+            include './subpages/allIssues.html';
           } else {
             /**
              * Login Process is as follows:
@@ -51,7 +52,7 @@
              * 4) login.php checks the email and password against the database and returns the allIssues.html file to the main section
              * 5) If the login fails the login.html file is returned to the main section
              */
-            include './htmlsnippets/login.html';
+            include './subpages/login.html';
           }
         ?>
       </section>

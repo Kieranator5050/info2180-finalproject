@@ -12,7 +12,7 @@
         $password = 'password123';
         $dbname = 'bugme';
 
-        $homeurl = '../htmlsnippets/allissues.html';
+        $homeurl = '../subpages/allissues.html';
 
         //Try catch block to check for connection errors
         try {
@@ -40,7 +40,7 @@
                 include $homeurl;
             } else {
                 //If the result is null include the login html
-                include '../htmlsnippets/login.html';
+                include '../subpages/login.html';
             }
         
         } catch (PDOException $e) {

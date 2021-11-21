@@ -2,7 +2,10 @@
     session_start();
     //var_dump($_REQUEST['requestType']);
     $request = filter_var($_REQUEST['requestType'], FILTER_SANITIZE_NUMBER_INT);
-    $homeurl = '../htmlsnippets/allissues.html';
+    $homeurl = '../subpages/allissues.html';
+    $createIssueUrl = '../subpages/createIssue.html';
+    $newUserUrl = '../subpages/newuser.html';
+    $loginUrl = '../subpages/login.html';
 
     if ($request==0) {
         //Home
@@ -11,7 +14,7 @@
         //Add User
         if(isset($_SESSION['email'])){
             if($_SESSION['email']=="admin@project2.com"){
-                include '../htmlsnippets/newuser.html';
+                include $newUserUrl;
             } else {
                 include $homeurl;
             }
@@ -22,7 +25,7 @@
 
     } elseif ($request==2) {
         //New Issue
-        include '../htmlsnippets/createIssue.html';
+        include $createIssueUrl;
 
     } else {
         //Logout
