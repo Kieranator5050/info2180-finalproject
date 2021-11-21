@@ -22,6 +22,20 @@
     <aside>
         <!-- Sidebar -->
         <div id="sidebar-contents">
+            <ul>
+                <li class="sidebar-option">
+                    <img src="images/home-24px.svg" alt="home"/>Home
+                </li>
+                <li class="sidebar-option">
+                    <img src="images/person_add-24px.svg" alt="add-user"/>Add User
+                </li>
+                <li class="sidebar-option">
+                    <img src="images/add_circle-24px.svg" alt="add-issue"/>New Issue
+                </li>
+                <li class="sidebar-option">
+                    <img src="images/power_settings_new-24px.svg" alt="logout"/>Logout
+                </li>
+            </ul>
         </div>
     </aside>
 
