@@ -27,19 +27,8 @@
 
     <div id="grid-wrapper">
         <main>
-            <!-- Form for Login -->
             <div class="area">
-                <form method="post" action="sign-in.php">
-                    <h2>User Login</h2>
-
-                    <label>Email</label>
-                    <input type="email" name="email" required>
-                    
-                    <label>Password</label>
-                    <input type="password" name="password" required>
-                    
-                    <button name="login" type="submit">Submit</button>
-                </form>
+                <h2>WELCOME TO THE DASHBOARD</h2>
             </div>
         </main>
     </div>
