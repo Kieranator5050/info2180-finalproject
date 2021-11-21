@@ -42,7 +42,7 @@
     <div id="grid-wrapper">
         <main>
             <div class="area">
-                <h2>WELCOME TO THE DASHBOARD</h2>
+                <h2>WELCOME TO THE ADD USER SECTION</h2>
             </div>
         </main>
     </div>

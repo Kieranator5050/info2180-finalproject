@@ -13,7 +13,7 @@ header {
 	grid-area: header;
 	background-color: black;
 	color: white;
-    min-height: 8vh;
+    min-height: 7.5vh;
 }
 
 h3{
@@ -34,7 +34,7 @@ body {
 	display: grid;
 	grid-template-areas: "header header" "nav content";
 	grid-template-columns: 200px 8fr;
-	grid-template-rows: 8vh 9fr;
+	grid-template-rows: 7.5vh 9fr;
 	column-gap: 2em;
 	height: 100vh;
 }
