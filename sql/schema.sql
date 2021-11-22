@@ -27,6 +27,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `issues`
 --
 
+CREATE DATABASE IF NOT EXISTS `bugme`;
+USE `bugme`;
+
 DROP TABLE IF EXISTS `issues`;
 CREATE TABLE IF NOT EXISTS `issues` (
   `id` int(11) NOT NULL,

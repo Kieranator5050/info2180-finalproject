@@ -2,10 +2,10 @@
     session_start();
     //var_dump($_REQUEST['requestType']);
     $request = filter_var($_REQUEST['requestType'], FILTER_SANITIZE_NUMBER_INT);
-    $homeurl = '../subpages/allissues.html';
-    $createIssueUrl = '../subpages/createIssue.html';
-    $newUserUrl = '../subpages/newuser.html';
-    $loginUrl = '../subpages/login.html';
+    $homeurl = '../subpages/allissues.php';
+    $createIssueUrl = '../subpages/createIssue.php';
+    $newUserUrl = '../subpages/newuser.php';
+    $loginUrl = '../subpages/login.php';
 
     if ($request==0) {
         //Home
@@ -29,6 +29,7 @@
 
     } else {
         //Logout
+        include $loginUrl;
         session_destroy();
     }
 ?>

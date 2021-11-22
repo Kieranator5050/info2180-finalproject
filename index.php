@@ -33,7 +33,7 @@
       <nav>
         <?php
           //Including all navbar items
-          include './subpages/navbar.html'; 
+          include './subpages/navbar.php'; 
         ?>
       </nav>
       <!-- NOTE: Main section-->
@@ -41,18 +41,21 @@
         <?php
           //If already logged in display home screen else show login display
           if (isset($_SESSION['isLogged'])) {
-            include './subpages/allIssues.html';
+            include './subpages/allIssues.php';
           } else {
             /**
+             * subpages/login.php - login frontend
+             * scripts/login.php - login backend
+             * 
              * Login Process is as follows:
-             * index.php -> login.html -> login.js -> login.php -> ? allIssues.html : login.html
-             * 1) index.php includes login.html
-             * 2) login.html loads login.js
-             * 3) login.js listens for a button click and sends an ajax request to login.php
-             * 4) login.php checks the email and password against the database and returns the allIssues.html file to the main section
-             * 5) If the login fails the login.html file is returned to the main section
+             * index.php -> subpages/login.php -> login.js -> scripts/login.php -> ? allIssues.html : subpages/login.php
+             * 1) index.php includes subpages/login.php
+             * 2) subpages/login.php loads login.js
+             * 3) login.js listens for a button click and sends an ajax request to scripts/login.php
+             * 4) scripts/login.php checks the email and password against the database and returns the allIssues.html file to the main section
+             * 5) If the login fails the subpages/login.php file is returned to the main section
              */
-            include './subpages/login.html';
+            include './subpages/login.php';
           }
         ?>
       </section>

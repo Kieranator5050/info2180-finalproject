@@ -7,23 +7,19 @@
         }
     } else {
         //Define database credentials
-        $host = 'localhost';
-        $username = 'admin@project2.com';
-        $password = 'password123';
-        $dbname = 'bugme';
+        require_once '../scripts/dbconfig.php';
 
-        $homeurl = '../subpages/allissues.html';
+        $homeurl = '../subpages/allissues.php';
 
         //Try catch block to check for connection errors
         try {
             //Make connection
-            $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require_once '../scripts/dbconnect.php';
         
             //Recieve query variables for the email and password.
             //The email is sanitized and verified
             $email = filter_var($_REQUEST['email'], FILTER_SANITIZE_EMAIL);
-            $pass = $_REQUEST['password'];
+            $pass = filter_var($_REQUEST['password'], FILTER_SANITIZE_STRING);
 
             //Make SQL query to find email and password
             $stmt = $conn->query("SELECT * FROM `users` WHERE email='$email' AND password=PASSWORD('$pass')");
@@ -40,7 +36,7 @@
                 include $homeurl;
             } else {
                 //If the result is null include the login html
-                include '../subpages/login.html';
+                include '../subpages/login.php';
             }
         
         } catch (PDOException $e) {
