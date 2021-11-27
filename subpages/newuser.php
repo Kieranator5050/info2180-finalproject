@@ -10,4 +10,6 @@
   <input type="email" name="email" value="">
   <button type="button" name="button">Submit</button>
 </form>
+<link href="world.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="./subpages/js/test.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
