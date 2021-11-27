@@ -1,0 +1,85 @@
+body{
+    font-family: Verdana ;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
+    grid-template-rows: 60px auto;
+}
+header{
+    grid-row: 1;
+    grid-column: span 2;
+    background-color: black;
+    color: white;
+    padding: 0.01px 50px;
+    text-align: left;
+}
+.body{
+    padding: 20px;
+    grid-column: 2;
+    
+}
+#pow{
+      padding-right:5px;
+}
+.issue_inline{
+    padding: 20px;
+    margin-left:80px ;
+}
+
+h4{
+    padding-top: 10px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+.issue_Num{
+    margin: 0;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.issue_Name{
+    padding-left: 15px;
+}
+.wrapper2{
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 2fr;
+    grid-template-rows: auto;
+}
+.description{
+    padding: 20px;
+    grid-column: 1;
+}
+#box{
+    border: 1px solid grey;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    width: 200px;
+    background-color: rgba(219, 213, 213, 0.452) ;
+    padding-bottom: 30px;
+}
+#b_close{
+    border: 0px;
+    width: 200px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+#b_progress{
+    border: 0px;
+    width: 200px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: rgb(15, 180, 9);
+    color: white;
+    cursor: pointer;
+}
+.buttons p:nth-child(odd){
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.buttons p:nth-child(even){
+    margin-top: 0px;
+}
