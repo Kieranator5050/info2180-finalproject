@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
                 console.log(data.length);
                 //Clear the main section
-                if(data.length>300){
+                //If the login screen is returned again keep the mainsection the same
+                if(data.length===431){
                     console.log("Login Failed");
                 } else {
                     console.log("Login Success");

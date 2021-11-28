@@ -28,6 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE DATABASE IF NOT EXISTS `bugme`;
+
+GRANT ALL PRIVILEGES ON bugme.* TO 'admin'@'localhost' IDENTIFIED BY 'password123';
+
 USE `bugme`;
 
 DROP TABLE IF EXISTS `issues`;
