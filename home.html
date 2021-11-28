@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="home.css">
+    <title>Dashboard/Home Screen </title>
+</head>
+    <body>
+        <div class="HomeScreen">
+            <header>
+                <h3 class="main-header"><i class="material-icons">bug_report</i>BugMe Issue Tracker</h3>
+            </header>
+            <div class="Dashboard">
+                <h3><i class="material-icons">home</i> Home</h3>
+                <h3><i class="material-icons">person_add</i> Add User</h3>
+                <h3><i class="material-icons">add_circle</i>New Issue</h3>
+                <h3><i class="material-icons">power_settings_new</i>Logout</h3>
+            </div>
+            <div class="body">
+                <div class="issues">
+                    <h1>Issues</h1>
+                    <h1><button type="" id="filterButtons">Create New Issue</button></h1>    
+                    <br><br><br><br>
+                    <p>Filter by:</p>
+                    <button id="filterButtons1">ALL</button>
+                    <button id="filterButtons2">Open</button>
+                    <button id="filterButtons2">My Tickets</button>
+                    <br><br>
+                </div>
+                
+                <table>
+                    <thead>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Assigned To</th>
+                        <th>Created</th>
+                    </thead>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>   
+    </body>
+</html>
