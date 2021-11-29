@@ -35,7 +35,7 @@ USE `bugme`;
 
 DROP TABLE IF EXISTS `issues`;
 CREATE TABLE IF NOT EXISTS `issues` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(20) NOT NULL,
   `description` text NOT NULL,
   `type` varchar(20) NOT NULL,
@@ -66,7 +66,7 @@ INSERT INTO `issues` (`id`, `title`, `description`, `type`, `priority`, `status`
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(20) NOT NULL,
   `lastname` varchar(20) NOT NULL,
   `password` varchar(100) NOT NULL,
@@ -80,9 +80,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password`, `email`, `date_joined`) VALUES
-(0, 'Key', 'Jug', '*182392BF1429D98EF9BE8A417B8772E7ACA7D942', 'keyjag@email.com', '2021-11-12 16:44:17'),
-(1, 'Lock', 'Door', '*46007E4650191CF78B6CC53895E82F0669BD8B8F', 'lockedDoor@email.sub.sub.com', '2021-11-12 16:44:17'),
-(2, 'ADMIN', 'USER', '*A0F874BC7F54EE086FCE60A37CE7887D8B31086B', 'admin@project2.com', '2021-11-13 16:08:27');
+(0, 'Key', 'Jug', '$2y$10$KPOeQC2cZXF99ZSDQZQQIu6Iq77k1eWMkSLXzVrS7NfTtWB8QCHi2', 'keyjag@email.com', '2021-11-12 16:44:17'),
+(1, 'Lock', 'Door', '$2y$10$y0noBa12F5U39hQ4oWD8/.wA9wN2zKX3d1KG65weEVpTuoS44XTGO', 'lockedDoor@email.sub.sub.com', '2021-11-12 16:44:17'),
+(2, 'ADMIN', 'USER', '$2y$10$sjxkpqc9.E9efPFsO23fseSmhCA5.j2HpQR2zfmATQPwpYutfbcdi', 'admin@project2.com', '2021-11-13 16:08:27');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
