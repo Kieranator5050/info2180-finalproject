@@ -1,6 +1,6 @@
 <?php
 //starting of session
-session_start();
+//session_start();
 //require_once 'dbconfig.php'
 //session_destroy();
 ?>

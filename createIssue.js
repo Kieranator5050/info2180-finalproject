@@ -1,6 +1,6 @@
 //window.onload = function() {
-$('form').submit(function(event){
-    event.preventDefault()
+//$('form').submit(function(event){
+    //event.preventDefault()
     $('.btn').click(function(e){
 
         //reading from form input ..1
@@ -32,5 +32,5 @@ $('form').submit(function(event){
     })
 
 
-})
+//})
 //}
