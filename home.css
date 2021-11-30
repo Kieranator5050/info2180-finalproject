@@ -26,12 +26,7 @@ header h3 {
     position: relative;
     bottom: 6px;
 }
-.Dashboard{
-    padding: 20px;
-    grid-column: 1;
-    background-color: rgba(219, 213, 213, 0.452)
-    
-}
+
 
 .body{
     padding: 20px;
@@ -40,10 +35,6 @@ header h3 {
 }
 
 
-
-#pow{
-      padding-right:5px;
-}
 
 .issues{
     padding: 20px;
@@ -79,6 +70,7 @@ p{
     border-radius: 4px;
     background-color: rgb(9, 40, 180);
     color: white;
+    cursor: pointer;
 }
 
 #filterButtons2{
@@ -88,11 +80,25 @@ p{
     border-radius: 4px;
     background-color:white;
     color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+#filterButtons3{
+    border: 0px;
+    width: 80px;
+    height: 25px;
+    border-radius: 4px;
+    background-color:white;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+
 }
 
 table{
     border-spacing: 0px;
     margin-left: 100px; 
+    width: fit-content;
 }
 
 th{
@@ -104,4 +110,7 @@ th{
     position: relative;
     top: 5px;
     right: 8px;
+}
+td{
+    position: relative;
 }
