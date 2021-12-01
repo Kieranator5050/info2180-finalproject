@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-var all = document.getElementById("filterButtons1") ;
+
+var all = document.getElementById("filterButtons1");
 var open = document.getElementById("filterButtons2");
 var ticket= document.getElementById("filterButtons3");
 
@@ -10,8 +10,8 @@ ticket.addEventListener('click', handleTicketClick);
 
 function handleAllClick(clickEvent){
     var httpRequest = new XMLHttpRequest();
-    var url = 'all.php' 
-    httpRequest.onreadystatechange= sort()
+    var url = './scripts/all.php'; 
+    httpRequest.onreadystatechange= sort();
     httpRequest.open('Get', url);
     httpRequest.send();
 }
@@ -19,8 +19,8 @@ function handleAllClick(clickEvent){
 
 function handleOpenClick(clickEvent){
     var httpRequest = new XMLHttpRequest();
-    var url = 'open.php' 
-    httpRequest.onreadystatechange= sort()
+    var url = './scripts/open.php'; 
+    httpRequest.onreadystatechange= sort();
     httpRequest.open('Get', url);
     httpRequest.send();
 
@@ -34,7 +34,11 @@ function sort(){
     if(httpRequest.readyState==XMLHttpRequest.DONE){
         if (httpRequest.status == 200){
             var response = httpRequest.responseText;
+            console.log(response)
             alert(response)
+        }
+        else{
+            console.log("error")
         }
     }
 }

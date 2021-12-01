@@ -1,5 +1,6 @@
 <html>
 <link rel="stylesheet" href="home.css">
+<script type="text/javascript" src="./subpages/js/filter.js"></script>
 <div class="HomeScreen">
     <div class="body">
         <div class="issues">
