@@ -1,5 +1,15 @@
+<?php 
+if (!$_SESSION['isLogged']) {
+    die();
+}
+?>
+
 <html>
 <link rel="stylesheet" href="home.css">
+<section id="styles">
+    <link rel="stylesheet" href="./subpages/styles/allissues.css">
+</section>
+
 <div class="HomeScreen">
     <div class="body">
         <div class="issues">
@@ -29,7 +39,11 @@
 
                   if ($result->num_rows>0){
                     while ($row= $result->fetch_assoc()){
-                      echo "<tr><td>" . $row['title'] . "<td<td>" . $row['type'] . "<td><td>" . $row['status'] . "<td><td>" . $row['assigned_to'] . "<td><td>" . $row['created'] . "<tr><td>";
+                        $rowID = $row['assigned_to'];
+                        $sql = "SELECT DISTINCT users.id, users.firstname, users.lastname FROM users WHERE users.id=$rowID";
+                        $assignedTo = $table->query($sql)->fetch_assoc();
+                        $assignedName = $assignedTo['firstname'] . $assignedTo['lastname'];
+                        echo "<tr><td>#<p class=\"id\">" . $row['id']."</p><a class=\"title\">".$row['title'] . "</a></td><td>" . $row['type'] . "</td><td class=\"status\">" . $row['status'] . "</td><td>" . $assignedName . "</td><td>" . $row['created'] . "</td><tr>";
                   }
                 }
                   $table->close();
@@ -39,4 +53,6 @@
     </div>
 <div>
 </html>
-<script type="text/javascript" src="./subpages/js/filter.js"></script>
+<section id="script">
+    <script type="text/javascript" src="./subpages/js/filter.js"></script>
+</section>
