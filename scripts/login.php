@@ -23,7 +23,7 @@
                 $pass = htmlspecialchars(filter_input(INPUT_GET,'password',FILTER_SANITIZE_STRING));
 
                 //Make SQL query to find email
-                $stmt = $conn->prepare("SELECT password FROM users WHERE email='$email'");
+                $stmt = $conn->prepare("SELECT id, password FROM users WHERE email='$email'");
                 $stmt->execute();
                 //Retreive the result
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -33,7 +33,8 @@
                     $hashedpassword=$result['password'];
                     if(password_verify($password,$hashedpassword)){
                         $correct = true;
-                        $_SESSION['ID'] = $email.$hashedpassword;
+                        $_SESSION['sessionID'] = $email.$hashedpassword;
+                        $_SESSION['ID'] = $result['id'];
                         $_SESSION['isLogged'] = true;
                         $_SESSION['email'] = $email;
                         break;

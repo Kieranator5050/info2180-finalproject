@@ -1,16 +1,28 @@
-body{
+*{
     margin: 0;
     padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
 }
   
 header{
     align-items: center;
     display: flex;
+    background-color: black;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+nav{
+    background-color: #aeb3b1;
 }
   
 .header-img{
-    height: 10%;
-    width: 10%;
+    height: 5%;
+    width: 5%;
 }
   
 h1{
@@ -21,4 +33,8 @@ h1{
 main{
     display: grid;
     grid-template-columns: 10% 90%;
+}
+
+#mainsection{
+    margin: 50%;
 }
