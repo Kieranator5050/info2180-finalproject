@@ -1,6 +1,5 @@
 <html>
 <link rel="stylesheet" href="home.css">
-<script type="text/javascript" src="./subpages/js/filter.js"></script>
 <div class="HomeScreen">
     <div class="body">
         <div class="issues">
@@ -21,7 +20,7 @@
                 <th>Assigned To</th>
                 <th>Created</th>
             </thead>
-            <tbody>
+            <tbody id="table-body">
                 <tr>
                 <?php
                   $table= mysqli_connect("localhost","admin@project2.com","password123","bugme" );
@@ -40,3 +39,4 @@
     </div>
 <div>
 </html>
+<script type="text/javascript" src="./subpages/js/filter.js"></script>

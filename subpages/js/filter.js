@@ -1,45 +1,51 @@
-document.addEventListener('DOMContentLoaded', () => {
 
-var all = document.getElementById("filterButtons1");
-var open = document.getElementById("filterButtons2");
-var ticket= document.getElementById("filterButtons3");
+    console.log("Loaded All Issues JS");
 
-all.addEventListener('click', handleAllClick);
-open.addEventListener('click',handleOpenClick);
-ticket.addEventListener('click', handleTicketClick);
+    var all = document.getElementById("filterButtons1");
+    var open = document.getElementById("filterButtons2");
+    var ticket= document.getElementById("filterButtons3");
+    var tableBody = document.getElementById("table-body");
 
-function handleAllClick(clickEvent){
-    var httpRequest = new XMLHttpRequest();
-    var url = './scripts/all.php'; 
-    httpRequest.onreadystatechange= sort();
-    httpRequest.open('Get', url);
-    httpRequest.send();
-}
+    all.addEventListener('click', handleAllClick);
+    open.addEventListener('click',handleOpenClick);
+    ticket.addEventListener('click', handleTicketClick);
 
+    function handleAllClick(clickEvent){
+        console.log("All Pressed");
 
-function handleOpenClick(clickEvent){
-    var httpRequest = new XMLHttpRequest();
-    var url = './scripts/open.php'; 
-    httpRequest.onreadystatechange= sort();
-    httpRequest.open('Get', url);
-    httpRequest.send();
-
-}
-
-function handleTicketClick(clickEvent){
-
-}
-
-function sort(){
-    if(httpRequest.readyState==XMLHttpRequest.DONE){
-        if (httpRequest.status == 200){
-            var response = httpRequest.responseText;
-            console.log(response)
-            alert(response)
-        }
-        else{
-            console.log("error")
-        }
+        //Ajax call
+        fetch(`./scripts/issues_all.php`)
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                tableBody.innerHTML = "";
+                tableBody.innerHTML = data;
+            })
+            .catch(err => console.error(err))
     }
-}
-});
+
+    function handleOpenClick(clickEvent){
+        console.log("Open Pressed");
+        //Ajax call
+        fetch(`./scripts/issues_open.php`)
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                tableBody.innerHTML = "";
+                tableBody.innerHTML = data;
+            })
+            .catch(err => console.error(err))
+    }
+
+    function handleTicketClick(clickEvent){
+        console.log("My Tickets Pressed");
+        //Ajax call
+        fetch(`./scripts/issues_mine.php`)
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                tableBody.innerHTML = "";
+                tableBody.innerHTML = data;
+            })
+            .catch(err => console.error(err))
+    }
