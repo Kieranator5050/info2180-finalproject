@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION['isLogged'] = true; //password won't work
+    //$_SESSION['isLogged'] = true; //password won't work
     if(isset($_SESSION['isLogged'])){
         if($_SESSION['isLogged']){
             //If the current session is already logged in then perform no requests

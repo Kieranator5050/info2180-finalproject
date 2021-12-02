@@ -22,6 +22,7 @@
         data.append('assigned',assignedTo);
         data.append('type',type);
         data.append('priority',priority);
+        console.log('clicked')
         
 
         //Connection To Server in order to send data object with form input ..4

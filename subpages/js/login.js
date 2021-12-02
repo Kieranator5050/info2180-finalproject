@@ -23,20 +23,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(data.length===431){
                     console.log("Login Failed");
                     //added because login won't work 
-                    $("#mainSection").empty();
-                    var navItems = document.getElementsByClassName('nav-item');
-                    for (var i = 0; i < navItems.length; i++) {
-                        navItems[i].style.display = 'flex';
-                    }
+                    // $("#mainSection").empty();
+                    // var navItems = document.getElementsByClassName('nav-item');
+                    // for (var i = 0; i < navItems.length; i++) {
+                    //     navItems[i].style.display = 'flex';
+                    // }
 
-                    varAddUserItem = document.getElementById("new-user");
-                    if(email==="admin@project2.com"){
-                        varAddUserItem.style.display = 'flex';
-                    } else {
-                        varAddUserItem.style.display = 'none';
-                    }
-                    //Add data to the main section
-                    $("#mainSection").append(data);
+                    // varAddUserItem = document.getElementById("new-user");
+                    // if(email==="admin@project2.com"){
+                    //     varAddUserItem.style.display = 'flex';
+                    // } else {
+                    //     varAddUserItem.style.display = 'none';
+                    // }
+                    // //Add data to the main section
+                    // $("#mainSection").append(data);
                     
                 } else {
                     console.log("Login Success");
