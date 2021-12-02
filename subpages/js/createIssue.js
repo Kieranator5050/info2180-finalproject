@@ -5,7 +5,7 @@
 
         //reading from form input ..1
         e.preventDefault();
-        console.log('Clicked');
+        //console.log('Clicked');
         var title = $('.title').val();
         var description = $('.description').val();
         var assignedTo = $('.assigned').val();
@@ -27,7 +27,7 @@
 
         //Connection To Server in order to send data object with form input ..4
         var xhr = new XMLHttpRequest();
-        xhr.open("POST","issueScript.php");
+        xhr.open("POST","./subpages/issuesScript.php");
         xhr.onload = function(){console.log(this.response);};
         xhr.send(data);
     })
