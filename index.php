@@ -60,11 +60,6 @@
         ?>
       </section>
     </main>
-
-    <!-- NOTE: Footer -->
-    <footer>
-
-    </footer>
   </body>
 </html>
 

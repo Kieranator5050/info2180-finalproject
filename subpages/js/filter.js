@@ -55,7 +55,7 @@
         fetch(`./subpages/createIssue.php`)
             .then(response => response.text())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 //Setting main section
                 $("#mainSection").empty();
                 $("#mainSection").append(data);
@@ -70,12 +70,15 @@
         fetch(`./scripts/issues_all.php`)
             .then(response => response.text())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 //Reloading table
-                $("#script").empty();
-                $("#script").append(`<script type="text/javascript" src="./subpages/js/filter.js"></script>`);
+
                 tableBody.innerHTML = "";
                 tableBody.innerHTML = data;
+                $("#script").empty();
+                $("#script").append(`<script type="text/javascript" src="./subpages/js/filter.js"></script>`);
+                $("#style").empty();
+                $("#style").append(`<link rel="stylesheet" href="./subpages/styles/allissues.css"></link>`);
 
                 //Setting Button Colors
                 all.style.backgroundColor = 'blue';
@@ -96,12 +99,14 @@
         fetch(`./scripts/issues_open.php`)
             .then(response => response.text())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 //Reloading table
-                $("#script").empty();
-                $("#script").append(`<script type="text/javascript" src="./subpages/js/filter.js"></script>`);
                 tableBody.innerHTML = "";
                 tableBody.innerHTML = data;
+                $("#script").empty();
+                $("#script").append(`<script type="text/javascript" src="./subpages/js/filter.js"></script>`);
+                $("#style").empty();
+                $("#style").append(`<link rel="stylesheet" href="./subpages/styles/allissues.css"></link>`);
 
                 //Setting Button Colors
                 all.style.backgroundColor = 'white';
@@ -122,13 +127,15 @@
         fetch(`./scripts/issues_mine.php`)
             .then(response => response.text())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 //Reloading table
-                $("#script").empty();
-                $("#script").append(`<script type="text/javascript" src="./subpages/js/filter.js"></script>`);
                 tableBody.innerHTML = "";
                 tableBody.innerHTML = data;
-
+                $("#script").empty();
+                $("#script").append(`<script type="text/javascript" src="./subpages/js/filter.js"></script>`);
+                $("#style").empty();
+                $("#style").append(`<link rel="stylesheet" href="./subpages/styles/allissues.css"></link>`);
+                
                 //Setting Button Colors
                 all.style.backgroundColor = 'white';
                 all.style.color = 'black';

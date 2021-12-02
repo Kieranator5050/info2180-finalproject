@@ -9,7 +9,7 @@
         $sql = "SELECT DISTINCT users.id, users.firstname, users.lastname FROM users WHERE users.id=$rowID";
         $assignedTo = $table->query($sql)->fetch_assoc();
         $assignedName = $assignedTo['firstname'] . $assignedTo['lastname'];
-        echo "<tr><td>#<p class=\"id\">" . $row['id']."</p><a class=\"title\">".$row['title'] . "</a></td><td>" . $row['type'] . "</td><td class=\"status\">" . $row['status'] . "</td><td>" . $assignedName . "</td><td>" . $row['created'] . "</td><tr>";
+        echo "<tr><td>#<span class=\"id\">" . $row['id']."</span> <a class=\"title\">".$row['title'] . "</a></td><td>" . $row['type'] . "</td><td class=\"statusContainer\"><span class=\"status\">" . $row['status'] . "</span></td><td>" . $assignedName . "</td><td>" . $row['created'] . "</td><tr>";
     }
 }
     $table->close();

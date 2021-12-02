@@ -45,3 +45,30 @@
     font-weight: bold;
 
 }
+
+.status{
+    margin: auto;
+    padding: 4px;
+}
+.statusContainer{
+    text-align: center;
+    vertical-align: middle;
+    padding: 6px;
+}
+tr{
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+}
+table{
+    text-align: center;
+    border-spacing: 0px;
+}
+th{
+    text-align: center;
+    background-color: rgb(245, 243, 243);
+    padding: 10px 100px 10px 10px;
+}
+
+td{
+    position: relative;
+}

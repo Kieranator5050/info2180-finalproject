@@ -5,22 +5,23 @@ if (!$_SESSION['isLogged']) {
 ?>
 
 <html>
-<link rel="stylesheet" href="home.css">
-<section id="styles">
+
+
+<section id="style">
     <link rel="stylesheet" href="./subpages/styles/allissues.css">
 </section>
-
 <div class="HomeScreen">
     <div class="body">
         <div class="issues">
             <h1>Issues</h1>
-            <h1><button type="" id="filterButtons">Create New Issue</button></h1>    
-            <br><br><br><br>
+            <h1><button type="" id="filterButtons">Create New Issue</button></h1>  
+            <br>
+            <br>
+            <br>  
             <p>Filter by:</p>
             <button id="filterButtons1">ALL</button>
             <button id="filterButtons2">Open</button>
             <button id="filterButtons3">My Tickets</button>
-            <br><br>
         </div>  
         <table class="table">
             <thead>
@@ -43,7 +44,7 @@ if (!$_SESSION['isLogged']) {
                         $sql = "SELECT DISTINCT users.id, users.firstname, users.lastname FROM users WHERE users.id=$rowID";
                         $assignedTo = $table->query($sql)->fetch_assoc();
                         $assignedName = $assignedTo['firstname'] . $assignedTo['lastname'];
-                        echo "<tr><td>#<p class=\"id\">" . $row['id']."</p><a class=\"title\">".$row['title'] . "</a></td><td>" . $row['type'] . "</td><td class=\"status\">" . $row['status'] . "</td><td>" . $assignedName . "</td><td>" . $row['created'] . "</td><tr>";
+                        echo "<tr><td>#<span class=\"id\">" . $row['id']."</span> <a class=\"title\">".$row['title'] . "</a></td><td>" . $row['type'] . "</td><td class=\"statusContainer\"><span class=\"status\">" . $row['status'] . "</span></td><td>" . $assignedName . "</td><td>" . $row['created'] . "</td><tr>";
                   }
                 }
                   $table->close();
