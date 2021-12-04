@@ -24,7 +24,8 @@ $assigned_id = $results['id'];
 
 $created_by = $_SESSION["ID"];
 
-$created_date = $updated_date = date("Y-m-d h:i:s");
+date_default_timezone_set('US/Eastern');
+$created_date = $updated_date = date("Y-m-d H:i:s");
 
 $stmt = $conn->prepare("INSERT INTO issues (title,description,type,priority,status,assigned_to,created_by,created,updated) VALUES (?,?,?,?,?,?,?,?,?)");
 $stmt->execute([$title,$desc,$type,$priority,"Open",$assigned_id,$created_by,$created_date,$updated_date]);

@@ -55,6 +55,7 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
                             </p>
                             <div id="dates">
                                 <?php   
+                                date_default_timezone_set('US/Eastern');
                                                             
                                 $date = date_create($result['created']);
 
