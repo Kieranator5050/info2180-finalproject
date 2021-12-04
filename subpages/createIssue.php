@@ -1,52 +1,84 @@
-<?php 
-if (!$_SESSION['isLogged']) {
-  die();
-}
+<?php
+session_start();
+
+require '../subpages/dbconfig.php';
+
+$stmt = $conn->prepare("SELECT * FROM users");
+$stmt->execute();
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<section id="style">
-    <link rel="stylesheet" href="./subpages/styles/createIssues.css">
-</section>
-<body>
-  <h1>Create Issue</h1>
+    <header>
+        <ul>
+            <li><img src="media/bug_report-white-18dp.svg" alt="bug" /></li>
+            <li>
+                <h3>BugMe Issue Tracker</h3>
+            </li>
+        </ul>
+    </header>
 
-  <form class="submission" action="" method="post" id = "form">
+    <!-- Beginning of sidebar -->
+    <aside>
+        <div id="sidebar-items">
+            <ul>
+                <li class="sidebar-item" id="home">
+                    <img src="media/home-24px.svg" alt="home"/>Home
+                </li>
+            <?php if($_SESSION['sessionID']  == "admin@project2.compassword123"){ ?>
+                <li class="sidebar-item" id="user">
+                    <img src="media/person_add-24px.svg" alt="add-user"/>Add User
+                </li>
+            <?php } ?>
+                <li class="sidebar-item" id="issue">
+                    <img src="media/add_circle-24px.svg" alt="add-issue"/>New Issue
+                </li>
+                <li class="sidebar-item" id="logout">
+                    <img src="media/power_settings_new-24px.svg" alt="logout"/>Logout
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- End of sidebar -->
 
-      <label for="title">Title</label><br>
-      <input type="text" class ="title" name="title"><br><br>
+    <div id="container">
+        <main>
+            <div class="inner">
+                <form id="add-issue" method="post">
+                    <h2>Create Issue</h2>
 
-      <label for="description">Description</label><br>
-      <input type="text" class ="description" name="description"><br><br>
+                    <label>Title</label>
+                    <input id="add-issue-title" type="text" name="title" required>
+                    
+                    <label>Description</label>
+                    <input id="add-issue-desc" id="desc" type="text" name="desc" required></input>
+                    
+                    <label>Assigned To</label>
+                    <select id="add-issue-assigned" name="assigned">
+                    <?php foreach($results as $result){ ?>
+                        <?php $name = $result["firstname"]." ".$result["lastname"]; ?>
+                        <option value="<?php echo $name?>"><?php echo $name?></option>
+                    <?php } ?>
+                    </select>
 
-      <label> Assigned To</label><br>
-      <select name = "assigned" class = "assigned">
-          <option> Key Jug </option>
-          <option> ADMIN USER </option>
-          
-      </select><br><br>
-      
+                    <label>Type</label>
+                    <select id="add-issue-type" name="type">
+                        <option value="Bug">Bug</option>
+                        <option value="Proposal">Proposal</option>
+                        <option value="Task">Task</option>
+                    </select>
 
-      <label> Type </label><br>
-      <select name = "bug" class = "bug">
-          <option> Bug </option>
-          <option> Proposal </option>
-          <option> Task </option>
-      </select><br><br>
-
-      <label> Priority </label><br>
-      <select name = "priority" class = "priority" >
-          <option> Minor </option>
-          <option> Major </option>
-          <option> Critical </option>
-      </select><br><br>
-
-      <button type = "submit" name = "submit" class = "btn"> Submit </button>
-
-    </form>
-  </body>
-
-<!-- <script type="text/javascript" src="./subpages/js/test.js"></script> -->
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="./subpages/js/createIssue.js" type="text/javascript"></script>
+                    <label>Priority</label>
+                    <select id="add-issue-priority" name="priority">
+                        <option value="Major">Major</option>
+                        <option value="Minor">Minor</option>
+                        <option value="Critical">Critical</option>
+                    </select>
+                    <button id="issueSubmit" name="newIssue" type="button">Submit</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $.getScript("js/main.js");
+    </script>
