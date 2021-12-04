@@ -104,7 +104,7 @@
                                         <td><?php echo $name; ?></td>
                                         
                                         <?php 
-                                            $date = date_create($results2["created"]);
+                                            $date = date_create($result["created"]);
                                             $new_date = date_format($date,"Y-m-d");
                                         ?>
                                         <td><?php echo $new_date;?></td>
